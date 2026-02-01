@@ -1,6 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import 'tailwindcss';
 @plugin 'lightswind/plugin';
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 * {
     margin: 0;
@@ -35,7 +35,8 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: transparent;
     color: var(--text-color);
-    line-height: 1.625;
+    font-size: 0.875rem;
+    line-height: 1.5;
     letter-spacing: 0.025em;
     transition: background-color 0.3s ease, color 0.3s ease;
     overflow-x: hidden;
@@ -68,7 +69,7 @@ header {
 }
 
 .name {
-    font-size: 1.1rem;
+    font-size: 0.925rem;
     font-weight: 600;
     color: var(--link-color);
     text-decoration: underline;
@@ -136,7 +137,7 @@ header {
 }
 
 main {
-    font-size: 1.1rem;
+    font-size: 0.875rem;
 }
 
 .section {
@@ -144,40 +145,40 @@ main {
 }
 
 .section h2 {
-    font-size: 1.1rem;
+    font-size: 0.875rem;
     font-weight: 600;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     letter-spacing: 0.025em;
 }
 
 .diamond {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     color: var(--text-color);
 }
 
 .item {
     padding-left: 4px;
-    margin-bottom: 2px;
+    margin-bottom: 1px;
     color: var(--text-color);
     letter-spacing: 0.025em;
-    line-height: 1.625;
+    line-height: 1.5;
 }
 
 .sub-item {
-    padding-left: 22px;
+    padding-left: 18px;
     color: var(--text-secondary);
-    font-size: 1.0rem;
+    font-size: 0.8rem;
     letter-spacing: 0.025em;
-    line-height: 1.625;
+    line-height: 1.5;
 }
 
 .branch {
     color: var(--text-color);
-    margin-right: 4px;
-    font-size: 1.0rem;
+    margin-right: 3px;
+    font-size: 0.8rem;
 }
 
 .highlight {
@@ -218,8 +219,8 @@ a.project-name:hover {
 .item img.inline-logo,
 .inline-logo {
     display: inline !important;
-    width: 22px;
-    height: 22px;
+    width: 18px;
+    height: 18px;
     vertical-align: middle;
     margin-right: 2px;
     border-radius: 3px;
@@ -229,7 +230,7 @@ a.project-name:hover {
 .divider {
     border: none;
     border-top: 1px solid var(--border-color);
-    margin: 16px 0;
+    margin: 12px 0;
 }
 
 a {
