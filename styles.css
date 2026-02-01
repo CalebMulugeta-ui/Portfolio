@@ -1,0 +1,293 @@
+@import 'tailwindcss';
+@plugin 'lightswind/plugin';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #0f172a;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+    --link-color: #0f172a;
+    --link-hover: #1e293b;
+}
+
+[data-theme="dark"] {
+    --bg-color: #0a0a0a;
+    --text-color: #e5e5e5;
+    --text-secondary: #a0a0a0;
+    --border-color: #2a2a2a;
+    --link-color: #e5e5e5;
+    --link-hover: #ffffff;
+}
+
+html {
+    background-color: var(--bg-color); /* This allows the canvas to show through */
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: transparent;
+    color: var(--text-color);
+    line-height: 1.625;
+    letter-spacing: 0.025em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+}
+
+.dg.ac{
+    display: none;
+}
+
+canvas{
+    width: 100%;
+    height: 100%;
+}
+
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 100px 24px;
+    position: relative;
+    z-index: 100;
+    background: transparent;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--link-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    letter-spacing: 0.025em;
+}
+
+.name:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.social-links a,
+.social-links button {
+    color: var(--text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 1px;
+}
+
+.social-links a:hover,
+.social-links button:hover {
+    opacity: 0.7;
+}
+
+.social-links .linkedin-icon {
+    color: #0077b5;
+}
+
+.social-links a:hover .linkedin-icon {
+    opacity: 0.7;
+}
+
+#theme-toggle {
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+#theme-toggle .sun-icon {
+    display: none;
+}
+
+#theme-toggle .moon-icon {
+    display: block;
+}
+
+[data-theme="dark"] #theme-toggle .sun-icon {
+    display: block;
+}
+
+[data-theme="dark"] #theme-toggle .moon-icon {
+    display: none;
+}
+
+main {
+    font-size: 1.1rem;
+}
+
+.section {
+    margin-bottom: 0;
+}
+
+.section h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.025em;
+}
+
+.diamond {
+    font-size: 0.7rem;
+    color: var(--text-color);
+}
+
+.item {
+    padding-left: 4px;
+    margin-bottom: 2px;
+    color: var(--text-color);
+    letter-spacing: 0.025em;
+    line-height: 1.625;
+}
+
+.sub-item {
+    padding-left: 22px;
+    color: var(--text-secondary);
+    font-size: 1.0rem;
+    letter-spacing: 0.025em;
+    line-height: 1.625;
+}
+
+.branch {
+    color: var(--text-color);
+    margin-right: 4px;
+    font-size: 1.0rem;
+}
+
+.highlight {
+    font-weight: 500;
+}
+
+.parallel {
+    color: #6366f1;
+}
+
+.doro {
+    color: #10b981;
+}
+
+.carleton {
+    color: #dc2626;
+}
+
+.ccss {
+    color: #f59e0b;
+}
+
+.colorstack {
+    color: #8b5cf6;
+}
+
+.project-name {
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.025em;
+}
+
+a.project-name:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.item img.inline-logo,
+.inline-logo {
+    display: inline !important;
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+    margin-right: 2px;
+    border-radius: 3px;
+    object-fit: contain;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 16px 0;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
+/* Bouncy jump animation */
+@keyframes bouncyJump {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    10% {
+        transform: translateY(-8px);
+    }
+    20% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-3px);
+    }
+    30% {
+        transform: translateY(0);
+    }
+    35% {
+        transform: translateY(-1px);
+    }
+    40%, 100% {
+        transform: translateY(0);
+    }
+}
+
+.github-icon {
+    animation: bouncyJump 4s ease-in-out infinite;
+}
+
+.linkedin-icon {
+    animation: bouncyJump 4s ease-in-out infinite;
+    animation-delay: 0.15s;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 40px 16px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .social-links {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
