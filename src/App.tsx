@@ -1,6 +1,39 @@
 import { useState, useEffect } from 'react';
 import SmokeyCursor from './components/lightswind/smokey-cursor';
 
+const projects = [
+  {
+    name: 'RoServers',
+    url: 'https://github.com/CalebMulugeta-ui/RoServers',
+    stack: 'JavaScript, Manifest V3, Vercel',
+    description: 'A Chrome extension that lets Roblox players filter servers by region and ping, used by 1,000+ players.',
+  },
+  {
+    name: 'PurePath',
+    url: 'https://github.com/CalebMulugeta-ui/PurePath',
+    stack: 'Python, YellowCake/Gemini API, Streamlit',
+    description: 'A truth checker for corporate sustainability claims.',
+  },
+  {
+    name: 'ReallyConnect',
+    url: 'https://github.com/GustavoBelaunde2004/colorstackwinterhack2025-ReallyConnect',
+    stack: 'Python, FastAPI, Supabase',
+    description: 'A mentorship platform that replaces traditional cold DMs.',
+  },
+  {
+    name: 'Brain Tumor Classifier',
+    url: 'https://github.com/CalebMulugeta-ui/Brain-Tumor-Classifier',
+    stack: 'Python, PyTorch, TensorFlow, TorchVision',
+    description: 'A convolutional neural network classifying MRI brain images into four tumor types.',
+  },
+  {
+    name: 'Ghost Hunter',
+    url: 'https://github.com/CalebMulugeta-ui/GhostHunter',
+    stack: 'C, Linux',
+    description: 'A C-based ghost hunting game built on a multithreaded simulation.',
+  },
+];
+
 function getInitialTheme(): 'light' | 'dark' {
   const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
   if (savedTheme) {
@@ -66,64 +99,48 @@ function App() {
 
         <main>
           <section className="section">
-            <h2><span className="diamond">&#9670;</span> Currently:</h2>
-            <div className="item">
-              <span className="branch">&#x21B3;</span> CS at <img src="/images/carleton.png" alt="Carleton" className="inline-logo" />Carleton University
-            </div>
-            <div className="item sub-item">
-              <span className="branch">&#x21B3;</span> AI & Machine Learning Specialization
-            </div>
-            <div className="item">
-              <span className="branch">&#x21B3;</span> Software Engineer Intern at <img src="/images/parallel.png" alt="Parallel" className="inline-logo" />Parallel
-            </div>
-            <div className="item">
-              <span className="branch">&#x21B3;</span> Software Engineer Intern at <img src="/images/doro.png" alt="Doro" className="inline-logo" />Doro
-            </div>
-            <div className="item">
-              <span className="branch">&#x21B3;</span> Outreach Chair at <img src="/images/colorstack.png" alt="ColorStack" className="inline-logo" />ColorStack-CU
-            </div>
+            <h2 className="section-title">Currently</h2>
+            <ul className="list">
+              <li className="item">
+                <span className="branch">&#x21B3;</span>CS at <img src="/images/carleton.png" alt="" className="inline-logo" /><span className="org">Carleton University</span>
+              </li>
+              <li className="item">
+                <span className="branch">&#x21B3;</span>Software Engineer Intern at <img src="/images/ericsson.jpg" alt="" className="inline-logo" /><span className="org">Ericsson</span>
+              </li>
+              <li className="item">
+                <span className="branch">&#x21B3;</span>Outreach Chair at <img src="/images/colorstack.png" alt="" className="inline-logo" /><span className="org">ColorStack-CU</span>
+              </li>
+            </ul>
           </section>
 
-          <hr className="divider" />
-
           <section className="section">
-            <h2><span className="diamond">&#9670;</span> Previously:</h2>
-            <div className="item">
-              <span className="branch">&#x21B3;</span> Software Developer at <img src="/images/ccss.png" alt="CCSS" className="inline-logo" />Carleton CS Society
-            </div>
-            <div className="item">
-              <span className="branch">&#x21B3;</span> CS Teaching Assistant at <img src="/images/carleton.png" alt="Carleton" className="inline-logo" />Carleton University
-            </div>
+            <h2 className="section-title">Previously</h2>
+            <ul className="list">
+              <li className="item">
+                <span className="branch">&#x21B3;</span>Software Engineer Intern at <img src="/images/parallel.png" alt="" className="inline-logo" /><span className="org">Parallel</span>
+              </li>
+              <li className="item">
+                <span className="branch">&#x21B3;</span>Software Developer at <img src="/images/ccss.png" alt="" className="inline-logo" /><span className="org">Carleton CS Society</span>
+              </li>
+              <li className="item">
+                <span className="branch">&#x21B3;</span>CS Teaching Assistant at <img src="/images/carleton.png" alt="" className="inline-logo" /><span className="org">Carleton University</span>
+              </li>
+            </ul>
           </section>
 
-          <hr className="divider" />
-
           <section className="section">
-            <h2><span className="diamond">&#9670;</span> Building:</h2>
-            <div className="item">
-              <span className="branch">&#x21B3;</span> <a href="https://github.com/CalebMulugeta-ui/PurePath" target="_blank" rel="noopener noreferrer" className="project-name">PurePath</a> - Python, YellowCake/Gemini API, Streamlit
-            </div>
-            <div className="item sub-item">
-              <span className="branch">&#x21B3;</span> A truth checker for corporate sustaniability claims.
-            </div>
-            <div className="item">
-              <span className="branch">&#x21B3;</span> <a href="https://github.com/GustavoBelaunde2004/colorstackwinterhack2025-ReallyConnect" target="_blank" rel="noopener noreferrer" className="project-name">ReallyConnect</a> - Python, FastAPI, SupaBase
-            </div>
-            <div className="item sub-item">
-              <span className="branch">&#x21B3;</span> A mentorship platform that replaces traditional cold DMS.
-            </div>
-            <div className="item">
-              <span className="branch">&#x21B3;</span> <a href="https://github.com/CalebMulugeta-ui/Brain-Tumor-Classifier" target="_blank" rel="noopener noreferrer" className="project-name">Brain Tumor Classifier</a> - Python, Pytorch, TensorFlow, TorchVision
-            </div>
-            <div className="item sub-item">
-              <span className="branch">&#x21B3;</span> Convolutional Neural Network classifying MRI brain images into four tumor types.
-            </div>
-            <div className="item">
-              <span className="branch">&#x21B3;</span> <a href="https://github.com/CalebMulugeta-ui/GhostHunter" target="_blank" rel="noopener noreferrer" className="project-name">Ghost Hunter</a> - C, Linux
-            </div>
-            <div className="item sub-item">
-              <span className="branch">&#x21B3;</span> A C based ghost hunting game that uses multithreaded simulation.  
-            </div>
+            <h2 className="section-title">Building</h2>
+            <ul className="list projects">
+              {projects.map(project => (
+                <li className="project" key={project.name}>
+                  <div className="project-header">
+                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="project-name">{project.name}</a>
+                    <span className="project-stack">{project.stack}</span>
+                  </div>
+                  <p className="project-desc">{project.description}</p>
+                </li>
+              ))}
+            </ul>
           </section>
         </main>
       </div>

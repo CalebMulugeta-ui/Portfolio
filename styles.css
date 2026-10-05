@@ -11,7 +11,7 @@
 :root {
     --bg-color: #ffffff;
     --text-color: #0f172a;
-    --text-secondary: #64748b;
+    --text-secondary: #475569;
     --border-color: #e2e8f0;
     --link-color: #0f172a;
     --link-hover: #1e293b;
@@ -20,7 +20,7 @@
 [data-theme="dark"] {
     --bg-color: #0a0a0a;
     --text-color: #e5e5e5;
-    --text-secondary: #a0a0a0;
+    --text-secondary: #b4b4b4;
     --border-color: #2a2a2a;
     --link-color: #e5e5e5;
     --link-hover: #ffffff;
@@ -36,8 +36,9 @@ body {
     background-color: transparent;
     color: var(--text-color);
     font-size: 0.875rem;
-    line-height: 1.5;
-    letter-spacing: 0.025em;
+    line-height: 1.6;
+    letter-spacing: -0.005em;
+    font-feature-settings: 'cv11', 'ss01';
     transition: background-color 0.3s ease, color 0.3s ease;
     overflow-x: hidden;
 }
@@ -69,16 +70,14 @@ header {
 }
 
 .name {
-    font-size: 0.925rem;
+    font-size: 1.15rem;
     font-weight: 600;
     color: var(--link-color);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    letter-spacing: 0.025em;
+    letter-spacing: -0.01em;
 }
 
 .name:hover {
-    text-decoration: underline;
+    opacity: 0.7;
 }
 
 .social-links {
@@ -137,100 +136,101 @@ header {
 }
 
 main {
-    font-size: 0.875rem;
-}
-
-.section {
-    margin-bottom: 0;
-}
-
-.section h2 {
-    font-size: 0.875rem;
-    font-weight: 600;
-    margin-bottom: 4px;
     display: flex;
-    align-items: center;
-    gap: 5px;
-    letter-spacing: 0.025em;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 36px;
 }
 
-.diamond {
-    font-size: 0.6rem;
-    color: var(--text-color);
+.section-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 .item {
-    padding-left: 4px;
-    margin-bottom: 1px;
-    color: var(--text-color);
-    letter-spacing: 0.025em;
-    line-height: 1.5;
-}
-
-.sub-item {
-    padding-left: 18px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 4px;
     color: var(--text-secondary);
-    font-size: 0.8rem;
-    letter-spacing: 0.025em;
-    line-height: 1.5;
+    font-size: 1rem;
+    line-height: 1.6;
+    letter-spacing: 0;
 }
 
 .branch {
+    color: var(--text-secondary);
+    opacity: 0.6;
+    margin-right: 4px;
+    font-size: 0.9rem;
+}
+
+.org {
     color: var(--text-color);
-    margin-right: 3px;
-    font-size: 0.8rem;
-}
-
-.highlight {
     font-weight: 500;
-}
-
-.parallel {
-    color: #6366f1;
-}
-
-.doro {
-    color: #10b981;
-}
-
-.carleton {
-    color: #dc2626;
-}
-
-.ccss {
-    color: #f59e0b;
-}
-
-.colorstack {
-    color: #8b5cf6;
-}
-
-.project-name {
-    font-weight: 600;
-    text-decoration: none;
-    letter-spacing: 0.025em;
-}
-
-a.project-name:hover {
-    text-decoration: underline;
-    text-underline-offset: 2px;
 }
 
 .item img.inline-logo,
 .inline-logo {
     display: inline !important;
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     vertical-align: middle;
-    margin-right: 2px;
-    border-radius: 3px;
-    object-fit: contain;
+    margin: 0 2px 0 2px;
+    border-radius: 4px;
+    object-fit: cover;
 }
 
-.divider {
-    border: none;
-    border-top: 1px solid var(--border-color);
-    margin: 12px 0;
+/* Projects */
+.projects {
+    gap: 16px;
+}
+
+.project-header {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 2px;
+}
+
+.project-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    text-decoration: underline;
+    text-decoration-color: var(--border-color);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    transition: text-decoration-color 0.2s ease;
+}
+
+a.project-name:hover {
+    text-decoration-color: var(--text-color);
+}
+
+.project-stack {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    opacity: 0.85;
+}
+
+.project-desc {
+    margin-top: 2px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 a {
